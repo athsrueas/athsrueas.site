@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/writing/ownership",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Ownership: The Importance of Stake · ATHSRUEAS",
+      "hasCanvas": false,
+      "bodyTextLen": 10569,
+      "bodyTextHash": "ce79da190a17f41f827e146a20786d46cc9bf4f08fece39bb5bd91ecfddb16ff",
+      "bodyTextPrefix": "Skip to content φ ATHSRUEAS HOME WRITING CV DEΦ WRITING Ownershi",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/ownership.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Ownership: The Importance of Stake · ATHSRUEAS",
+      "hasCanvas": false,
+      "bodyTextLen": 10559,
+      "bodyTextHash": "35c4463f17ecabcfae3d549acde429763315209525136501783d811295ada720",
+      "bodyTextPrefix": "Skip to content φ ATHSRUEAS Open menu WRITING Ownership: The Imp",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/ownership-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/ownership.json"
+}

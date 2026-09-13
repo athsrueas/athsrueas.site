@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "ATHSRUEAS · Thomas Freestone",
+      "hasCanvas": false,
+      "bodyTextLen": 2259,
+      "bodyTextHash": "c58a58b004e29eb3946c172b20890b7d9c4873e20b3b83bd2ca56b77cbb46b38",
+      "bodyTextPrefix": "Skip to content φ ATHSRUEAS HOME WRITING CV DEΦ φ ATHSRUEAS Thom",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/prod-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "ATHSRUEAS · Thomas Freestone",
+      "hasCanvas": false,
+      "bodyTextLen": 2249,
+      "bodyTextHash": "a5d988963b96b4ad60e933e77a5a6097077ded4658b6b3600a6132cb4742a341",
+      "bodyTextPrefix": "Skip to content φ ATHSRUEAS Open menu φ ATHSRUEAS Thomas Freesto",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/prod-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/prod-preview.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

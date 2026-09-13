@@ -1,0 +1,357 @@
+Paste this into Grok Build as the initial project brief:
+
+Build a replacement for my existing Google Sites website and prepare it for deployment on Cloudflare Pages.
+
+Current site
+
+Public Google Sites source:
+
+https://sites.google.com/view/athsrueas-eth/athsrueas-eth
+
+Custom domain:
+
+https://athsrueas.site
+
+The domain is registered through Squarespace, but authoritative DNS is being moved to Cloudflare. Cloudflare nameservers are:
+
+kolton.ns.cloudflare.com
+nora.ns.cloudflare.com
+
+Do not modify DNS or attempt to take the production domain live yet. Build and test the replacement first.
+
+Objective
+
+Rebuild the existing Google Site as a clean, fast, maintainable static website while preserving its actual content, images, external links, and overall identity.
+
+Do not reproduce Google Sites-generated HTML or its visual/template structure. Extract the underlying content and rebuild it properly.
+
+The finished site should initially deploy to a Cloudflare Pages preview/domain. athsrueas.site will be attached only after the replacement has been reviewed.
+
+Technology
+
+Use:
+
+* Astro
+* Markdown/MDX for long-form writing
+* Semantic HTML
+* CSS
+* Minimal JavaScript
+* Git/GitHub
+* Cloudflare Pages
+
+Prefer static generation wherever possible.
+
+Do not introduce:
+
+* React unless there is a specific interactive feature that actually requires it
+* Next.js
+* WordPress
+* A database
+* A CMS
+* Tailwind unless there is a compelling reason
+* Large JavaScript component libraries
+
+The site is fundamentally static. The architecture should reflect that.
+
+Why Astro
+
+The existing site has normal pages plus long-form writing. Astro gives us reusable layouts/components while still producing static HTML, and Markdown makes future articles easy to maintain.
+
+Raw HTML would technically work, but maintaining multiple articles and shared navigation manually would become unnecessarily repetitive.
+
+A larger application framework would add runtime and dependency complexity without solving a problem this site currently has.
+
+Existing content
+
+First inspect the entire public Google Site and create an inventory before redesigning anything.
+
+Known content includes:
+
+* Home page
+* Personal introduction / biography
+* Husband / father / teacher / advocate / community-builder identity
+* Education information
+* Teaching background
+* Community and advocacy work
+* Current professional information
+* CV/resume page
+* External/social/community links
+* Long-form writing
+* Article titled “Ownership: The Importance of Stake”
+* Images associated with those pages
+
+Do not assume this list is exhaustive. Crawl the public site and discover all reachable pages, images, documents and links.
+
+Preserve the substantive content unless there is an obvious typo or formatting artifact. Do not silently rewrite autobiographical claims.
+
+Migration inventory
+
+Before implementation, create a migration manifest containing:
+
+old URL
+page title
+page type
+major sections/headings
+body content
+images
+outbound links
+documents/downloads
+proposed new URL
+migration notes
+
+Identify any content that cannot be retrieved reliably rather than inventing replacements.
+
+Proposed information architecture
+
+Start with approximately:
+
+/
+/cv/
+/writing/
+/writing/ownership/
+
+If the existing site contains enough material to justify additional pages, propose them before adding them.
+
+Avoid exposing Google-Sites-specific paths such as:
+
+/hosted-blog-pages/ownership
+
+The replacement should instead use durable, human-readable URLs such as:
+
+/writing/ownership/
+
+Suggested project organization
+
+Use an Astro structure along these lines:
+
+src/
+  components/
+  layouts/
+  pages/
+  content/
+    writing/
+  styles/
+public/
+  images/
+  files/
+
+Store article content separately from layout and navigation.
+
+Shared elements such as navigation, footer, metadata and article layouts should be reusable rather than duplicated between pages.
+
+Images
+
+Download and host the site’s images locally in the project.
+
+Do not leave production pages dependent on Google Sites or googleusercontent.com image URLs.
+
+Preserve original files where reasonably possible and optimize copies for the web.
+
+Maintain meaningful filenames and alt text.
+
+Do not fabricate alt text describing details that cannot actually be determined from the image.
+
+Visual direction
+
+The replacement should feel:
+
+* minimal
+* timeless
+* polished
+* editorial
+* personal rather than corporate
+* content-first
+* restrained
+
+Favor:
+
+* black, white and neutral gray
+* high contrast
+* generous whitespace
+* strong typography
+* readable article widths
+* subtle rules/dividers
+* simple navigation
+* slightly rounded elements only where appropriate
+
+Avoid:
+
+* gradients
+* glassmorphism
+* heavy shadows
+* excessive cards
+* pill-shaped UI everywhere
+* decorative icons
+* animation for its own sake
+* generic AI/SaaS landing-page aesthetics
+* low-contrast gray-on-gray text
+
+The content should visually dominate the interface.
+
+Homepage direction
+
+The homepage should communicate identity and major site areas quickly rather than reproducing the current stacked Google Sites layout.
+
+A reasonable hierarchy is:
+
+ATHSRUEAS
+Thomas Freestone
+Husband · Father · Teacher · Advocate · Community Builder
+short introduction
+About
+Work
+Background
+Writing
+Community
+prominent links to:
+CV
+Writing
+relevant external/community profiles
+
+Treat this as information architecture rather than mandatory exact copy.
+
+Writing
+
+Long-form posts should live as Markdown/MDX content.
+
+Each article should support metadata such as:
+
+title:
+description:
+publishDate:
+updatedDate:
+slug:
+
+Only add metadata values that can be determined from the source or explicitly supplied. Do not invent publication dates.
+
+Articles should use a shared article layout and support:
+
+* headings
+* links
+* images
+* quotations
+* lists
+* readable typography
+
+CV
+
+Preserve the substance of the existing CV.
+
+Reformat it for good web readability rather than cloning the Google Sites presentation.
+
+Flag apparent inconsistencies or typos for review instead of silently changing potentially meaningful information.
+
+Known wording worth reviewing includes references to Purdue/IUPUI and the spelling of Indianapolis.
+
+Accessibility
+
+Build toward normal WCAG-friendly practices:
+
+* semantic headings
+* keyboard-accessible navigation
+* visible focus states
+* sufficient contrast
+* meaningful link text
+* image alt attributes
+* reasonable typography and spacing
+
+Performance
+
+The site should require very little client-side JavaScript.
+
+Optimize images and fonts appropriately.
+
+Do not ship a large JS bundle for static content.
+
+Avoid unnecessary third-party trackers and dependencies.
+
+SEO / metadata
+
+Add basic static metadata:
+
+* page title
+* description
+* canonical URL structure
+* Open Graph metadata where appropriate
+* sitemap
+* robots.txt
+
+Do not overengineer SEO.
+
+Redirect planning
+
+Create a redirect map for important historical URLs where possible.
+
+In particular, consider mapping:
+
+/hosted-blog-pages/ownership
+
+to:
+
+/writing/ownership/
+
+Do not activate redirects until we understand which custom-domain URLs were actually publicly used.
+
+Cloudflare deployment
+
+Target Cloudflare Pages.
+
+The expected deployment flow is:
+
+source files
+↓
+GitHub repository
+↓
+Cloudflare Pages build
+↓
+*.pages.dev preview
+↓
+review
+↓
+athsrueas.site
+
+Do not switch the production custom domain until the preview has been validated.
+
+DNS is already being delegated to Cloudflare separately, so do not attempt to automate registrar changes.
+
+Validation before cutover
+
+Verify:
+
+* every migrated page loads
+* navigation works
+* every internal link works
+* important external links still point to their original destinations
+* images load locally rather than from Google
+* mobile layout works
+* desktop layout works
+* article formatting is intact
+* metadata is reasonable
+* no Google Sites dependencies remain
+* no accidental secrets or private information entered the repository
+* Cloudflare preview deploy succeeds
+
+Important migration rule
+
+Do not delete, alter, or disable the existing Google Site during development.
+
+It remains the production/reference version until the replacement is explicitly approved.
+
+First milestone
+
+Do not begin by redesigning everything at once.
+
+Start with:
+
+1. Crawl and inventory the existing website.
+2. Produce the migration manifest.
+3. Propose the final page/URL structure.
+4. Create the minimal Astro project architecture.
+5. Rebuild only the homepage first.
+6. Run it locally and show the result.
+
+Stop there for review before migrating the CV and articles.
+
+When something in the existing site is ambiguous, preserve it or flag it rather than guessing.
+
+The first-milestone constraint is important. I would not tell Grok Build “rebuild the whole site” in one shot. Getting the crawl, content model, Astro structure, and homepage correct establishes the architecture; otherwise an agent can very quickly create a polished-looking site on top of an incorrect content structure, and fixing that afterward means refactoring every page.

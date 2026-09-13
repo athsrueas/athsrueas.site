@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/writing",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Writing · ATHSRUEAS",
+      "hasCanvas": false,
+      "bodyTextLen": 1318,
+      "bodyTextHash": "9c952d3d15b8ea3f7ff8546d565a97d8605d730c606f2467719bfb24659e7629",
+      "bodyTextPrefix": "Skip to content φ ATHSRUEAS HOME WRITING CV DEΦ ESSAYS Writing L",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/writing.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Writing · ATHSRUEAS",
+      "hasCanvas": false,
+      "bodyTextLen": 1308,
+      "bodyTextHash": "5d145ebffdd2b507c4c3b1cf5095b75b9ed77d0ba8b0679e62f3b8d6d3871ac6",
+      "bodyTextPrefix": "Skip to content φ ATHSRUEAS Open menu ESSAYS Writing Long-form n",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/writing-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/writing.json"
+}
