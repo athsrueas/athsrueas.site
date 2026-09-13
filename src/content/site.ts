@@ -25,7 +25,7 @@ export const links = {
   linkedinAlt: "https://www.linkedin.com/in/thomas-freestone-172392164/",
   x: "https://x.com/athsrueas",
   reddit: "https://www.reddit.com/user/athsrueas",
-  discordPersonal: "https://discord.gg/j65hAyeR4r",
+  kofi: "https://ko-fi.com/athsrueas",
   discordGraph: "https://discord.gg/graphprotocol",
   telegram: "https://t.me/Athsrueas",
   storygraph: "https://app.thestorygraph.com/profile/athsrueas",
