@@ -3,6 +3,7 @@ export const site = {
   mark: "φ",
   person: "Thomas Freestone",
   ens: "athsrueas.eth",
+  url: "https://athsrueas.site",
   tagline: "Husband · Father · Teacher · Advocate · Community Builder",
   description:
     "Personal site of Thomas Freestone — husband, father, teacher, advocate, and community builder. Writing, CV, and work.",
@@ -14,9 +15,9 @@ export const site = {
 
 export const nav = [
   { href: "/", label: "Home" },
-  { href: "/writing", label: "Writing" },
-  { href: "/cv", label: "CV" },
-  { href: "/projects/dephi", label: "deφ" },
+  { href: "/writing/", label: "Writing" },
+  { href: "/cv/", label: "CV" },
+  { href: "/projects/dephi/", label: "deφ" },
 ] as const;
 
 export const links = {

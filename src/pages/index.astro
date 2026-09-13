@@ -1,0 +1,159 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { links, site } from "../content/site";
+
+const posts = (await getCollection("writing")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="ATHSRUEAS"
+  description="Personal site of Thomas Freestone — husband, father, teacher, advocate, and community builder."
+>
+  <main>
+    <section class="mx-auto max-w-5xl px-5 pb-16 pt-14 sm:px-8 sm:pb-24 sm:pt-20">
+      <p class="font-display text-sm tracking-[0.22em] text-ink-soft">
+        {site.mark} ATHSRUEAS
+      </p>
+      <h1
+        class="mt-4 max-w-3xl font-display text-[clamp(2.4rem,7vw,5.25rem)] font-medium leading-[0.95] tracking-[-0.04em] text-ink"
+      >
+        {site.person}
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-ink-soft sm:text-xl">{site.tagline}</p>
+      <p class="mt-8 max-w-2xl text-base leading-7 text-ink sm:text-[1.125rem] sm:leading-8">
+        {site.intro}
+      </p>
+      <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm tracking-[0.12em] uppercase">
+        <a href="/cv/" class="underline decoration-rule underline-offset-4 hover:decoration-ink">
+          CV
+        </a>
+        <a href="/writing/" class="underline decoration-rule underline-offset-4 hover:decoration-ink">
+          Writing
+        </a>
+        <a href={links.linkedin} class="underline decoration-rule underline-offset-4 hover:decoration-ink">
+          LinkedIn
+        </a>
+        <a href={links.x} class="underline decoration-rule underline-offset-4 hover:decoration-ink">
+          X
+        </a>
+      </div>
+    </section>
+
+    <section class="border-y border-rule">
+      <div class="mx-auto grid max-w-5xl gap-0 sm:grid-cols-2">
+        <figure class="border-b border-rule sm:border-b-0 sm:border-r">
+          <img
+            src="/images/portrait-family.jpg"
+            alt="Thomas Freestone holding a young child"
+            class="aspect-[4/5] w-full object-cover object-[50%_18%] sm:aspect-[4/5]"
+            width="800"
+            height="1000"
+          />
+        </figure>
+        <figure>
+          <img
+            src="/images/teaching.jpg"
+            alt="Thomas Freestone writing on a classroom whiteboard"
+            class="aspect-[4/5] w-full object-cover object-center"
+            width="800"
+            height="1000"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section
+      class="mx-auto grid max-w-5xl gap-12 px-5 py-16 sm:grid-cols-2 sm:gap-16 sm:px-8 sm:py-24"
+    >
+      <div>
+        <h2 class="font-display text-sm tracking-[0.18em] uppercase text-muted">About</h2>
+        <p class="mt-4 text-[1.0625rem] leading-7">{site.identityLine}</p>
+        <p class="mt-4 text-[1.0625rem] leading-7 text-ink-soft">
+          {site.educationLine}. Licensed teacher in Indiana. Graph Advocate. Currently leading IT
+          projects at Performance Services.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-sm tracking-[0.18em] uppercase text-muted">Work</h2>
+        <p class="mt-4 text-[1.0625rem] leading-7">
+          Software (IT) Project Manager at Performance Services, serving K-12 schools and
+          municipalities across the United States.
+        </p>
+        <p class="mt-4 text-[1.0625rem] leading-7 text-ink-soft">
+          Previously mathematics teacher at Christel House Indy, 2018–2024, and an independent
+          Graph Advocate from 2022–2024.
+        </p>
+        <p class="mt-5">
+          <a href="/cv/" class="text-sm tracking-[0.12em] uppercase underline decoration-rule">
+            Full CV
+          </a>
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-sm tracking-[0.18em] uppercase text-muted">Background</h2>
+        <p class="mt-4 text-[1.0625rem] leading-7">
+          Applied mathematics, secondary math, and a long stretch of classroom work in
+          Indianapolis — community, content, teacher.
+        </p>
+        <p class="mt-4 text-[1.0625rem] leading-7 text-ink-soft">
+          Weaving new threads, stronger than the fray.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-sm tracking-[0.18em] uppercase text-muted">Community</h2>
+        <p class="mt-4 text-[1.0625rem] leading-7">
+          Graph Advocate. Third Place —{" "}
+          <a href={links.thirdPlaceWiki} class="underline decoration-rule">
+            a place to gather
+          </a>
+          . Discord Athsrueas · Telegram @Athsrueas
+        </p>
+        <ul class="mt-5 flex flex-col gap-2 text-sm">
+          <li>
+            <a href={links.discordPersonal} class="underline decoration-rule">Discord</a>
+          </li>
+          <li>
+            <a href={links.storygraph} class="underline decoration-rule">Currently reading</a>
+          </li>
+          <li>
+            <a href={links.tcgplayer} class="underline decoration-rule">Magic shop</a>
+          </li>
+          <li>
+            <a href="/projects/dephi/" class="underline decoration-rule">deφ</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="border-t border-rule">
+      <div class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-24">
+        <div class="flex items-end justify-between gap-6">
+          <h2 class="font-display text-3xl sm:text-4xl">Writing</h2>
+          <a href="/writing/" class="text-sm tracking-[0.12em] uppercase underline decoration-rule">
+            All essays
+          </a>
+        </div>
+        <ul class="mt-10 divide-y divide-rule border-y border-rule">
+          {
+            posts.map((post) => (
+              <li>
+                <a
+                  href={`/writing/${post.id}/`}
+                  class="group flex flex-col gap-2 py-6 no-underline sm:flex-row sm:items-baseline sm:justify-between sm:gap-10"
+                >
+                  <span class="font-display text-xl leading-snug group-hover:underline sm:text-2xl">
+                    {post.data.title}
+                  </span>
+                  <span class="max-w-md shrink-0 text-sm text-muted sm:text-right">
+                    {post.data.description}
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

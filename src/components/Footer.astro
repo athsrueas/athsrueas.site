@@ -1,0 +1,35 @@
+---
+import { links, site } from "../content/site";
+---
+
+<footer class="mt-auto border-t border-rule">
+  <div
+    class="mx-auto flex max-w-5xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-end sm:justify-between sm:px-8"
+  >
+    <div>
+      <p class="font-display text-sm tracking-[0.16em] text-ink">
+        {site.mark} {site.name}
+      </p>
+      <p class="mt-2 max-w-sm text-sm text-muted">
+        {site.person} · {site.ens}
+      </p>
+    </div>
+    <ul class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
+      <li>
+        <a href={links.x} class="hover:text-ink">X</a>
+      </li>
+      <li>
+        <a href={links.linkedin} class="hover:text-ink">LinkedIn</a>
+      </li>
+      <li>
+        <a href={links.discordPersonal} class="hover:text-ink">Discord</a>
+      </li>
+      <li>
+        <a href="/cv/" class="no-underline hover:text-ink">CV</a>
+      </li>
+      <li>
+        <a href="/writing/" class="no-underline hover:text-ink">Writing</a>
+      </li>
+    </ul>
+  </div>
+</footer>

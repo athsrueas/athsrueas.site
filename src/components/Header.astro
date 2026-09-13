@@ -1,0 +1,65 @@
+---
+import { nav, site } from "../content/site";
+
+const pathname = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href);
+---
+
+<header class="border-b border-rule">
+  <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
+    <a href="/" class="group flex items-baseline gap-2 no-underline">
+      <span class="font-display text-lg leading-none text-ink-soft" aria-hidden="true">
+        {site.mark}
+      </span>
+      <span class="font-display text-sm font-medium tracking-[0.18em] text-ink">{site.name}</span>
+    </a>
+
+    <nav class="hidden items-center gap-7 sm:flex" aria-label="Primary">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "text-[0.8125rem] tracking-[0.14em] uppercase no-underline transition-colors duration-150",
+              isActive(item.href) ? "text-ink" : "text-muted hover:text-ink",
+            ]}
+            aria-current={isActive(item.href) ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <details class="sm:hidden">
+      <summary
+        class="flex h-11 w-11 cursor-pointer list-none items-center justify-center"
+        aria-label="Menu"
+      >
+        <span class="sr-only">Open menu</span>
+        <span class="flex flex-col gap-1.5" aria-hidden="true">
+          <span class="block h-px w-5 bg-ink" />
+          <span class="block h-px w-5 bg-ink" />
+          <span class="block h-px w-5 bg-ink" />
+        </span>
+      </summary>
+      <nav class="border-t border-rule px-5 py-3" aria-label="Primary">
+        <ul class="flex flex-col">
+          {
+            nav.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="flex min-h-11 items-center text-sm tracking-[0.12em] uppercase no-underline"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>
