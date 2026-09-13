@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "typecheck": "astro check"
+    "typecheck": "astro check",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name athsrueas-site --branch main"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
@@ -18,6 +19,7 @@
     "@astrojs/check": "0.9.10",
     "@tailwindcss/vite": "4.3.3",
     "tailwindcss": "4.3.3",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "wrangler": "^4.131.1"
   }
 }

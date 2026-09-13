@@ -45,25 +45,44 @@ re-asking the owner.
 - If a push ever fails with auth errors: verify the key with `ssh -T git@github.com`,
   then ensure the remote is `git remote set-url origin git@github.com:athsrueas/athsrueas.site.git`.
 
-### Cloudflare Pages — deploy access (scoped API token)
+### Cloudflare Pages — live and deployable
 
-Deployment target is Cloudflare Pages; `dist/` is pure static and drops straight in.
+The site is **live** at `https://athsrueas.site` (and `https://www.athsrueas.site`),
+served from Cloudflare Pages project **`athsrueas-site`** (`dist/` is pure static).
+Projects and infra:
 
-The owner intends to provide a **scoped Cloudflare API token** for deployment
-(owner action: GitHub/Cloudflare UI, not something an agent creates):
+- Account: `52ff65073a2fd35a3a45147e7fdf67e3`
+  (`Thomasfreestone@gmail.com's Account`)
+- Zone: `athsrueas.site` (`282f91a8fe5855be1fde251cc164a119`, active, Cloudflare DNS)
+- Pages project: `athsrueas-site` (classic Pages, NOT the Workers/delegated variant)
+- Custom domains attached to the project: `athsrueas.site` (apex) + `www.athsrueas.site`;
+  DNS is two proxied CNAMEs → `athsrueas-site.pages.dev`. Mail records (MX/SPF
+  Mailgun, Brevo code, DKIM, DMARC) must be left untouched.
 
-- **Scope:** Cloudflare Pages — Edit, restricted to the athsrueas Pages account/project(s)
-- **Env var:** `CLOUDFLARE_API_TOKEN` (plus `CLOUDFLARE_ACCOUNT_ID` if required by the flow)
-- Once the token is present in the environment, deploy with:
-  ```
-  npm run build
-  npx wrangler pages deploy dist --project-name <pages-project>
-  ```
-- **Never commit, hardcode, or log the token.** It lives only in the environment /
-  secrets, and `wrangler` pulls it from `CLOUDFLARE_API_TOKEN` automatically.
+Deploy command (also `npm run deploy`):
+
+```
+npm run build && wrangler pages deploy dist --project-name athsrueas-site --branch main
+```
+
+- Token: `CLOUDFLARE_API_TOKEN` lives in the repo-local `.env` (gitignored). Wrangler
+  loads `.env` automatically; sanity-check with `wrangler whoami`.
+- **Never commit, hardcode, or log the token.** Verify with
+  `git check-ignore -v .env` after any `.gitignore` edit.
 - If `CLOUDFLARE_API_TOKEN` is missing or expired, stop and ask the owner to
   create/replace it (Cloudflare → My Profile → API Tokens → Create Token →
   Cloudflare Pages, Edit) rather than guessing credentials.
+
+Gotchas learned the hard way:
+
+- Never re-run `wrangler pages project create` for this project. Wrangler's new
+  "Pages → Workers" delegation flow auto-installs the `@astrojs/cloudflare` SSR
+  adapter into the repo (modifying `astro.config.mjs`, `package.json`,
+  `tsconfig.json`, adding a `wrangler.jsonc`), breaking the lightweight static
+  build (`dist` splits into `client` + `server`). If that ever happens, revert
+  those files and `npm uninstall @astrojs/cloudflare`.
+- If a stale `.wrangler/deploy/config.json` blocks `pages deploy`, `rm -rf .wrangler`
+  first.
 
 ## Secrets policy
 

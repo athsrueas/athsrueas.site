@@ -46,18 +46,22 @@ const posts = (await getCollection("writing")).sort((a, b) => a.data.order - b.d
           <img
             src="/images/portrait-family.jpg"
             alt="Thomas Freestone holding a young child"
-            class="aspect-[4/5] w-full object-cover object-[50%_18%] sm:aspect-[4/5]"
-            width="800"
-            height="1000"
+            class="aspect-video w-full object-cover object-center"
+            width="1000"
+            height="389"
+            loading="lazy"
+            decoding="async"
           />
         </figure>
         <figure>
           <img
             src="/images/teaching.jpg"
             alt="Thomas Freestone writing on a classroom whiteboard"
-            class="aspect-[4/5] w-full object-cover object-center"
-            width="800"
-            height="1000"
+            class="aspect-video w-full object-cover object-center"
+            width="1200"
+            height="1200"
+            loading="lazy"
+            decoding="async"
           />
         </figure>
       </div>
