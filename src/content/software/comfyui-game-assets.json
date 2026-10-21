@@ -1,0 +1,21 @@
+{
+  "title": "ComfyUI Game Asset Toolkit",
+  "summary": "A custom Node.js client, CLI, and workflow recipes for generating artwork, transparent cutouts, upscaled images, music, and sound effects.",
+  "description": "A toolkit for driving a local ComfyUI server from scripts and agent tools. It supports node and model discovery, workflow validation, uploads, queued generation, status polling, and downloading completed assets.\n\nThe game-asset recipes cover SDXL artwork, BiRefNet transparent cutouts, Real-ESRGAN upscaling, ACE-Step music, and Stable Audio sound effects. Recorded execution checks include a potion icon and cutout, image upscaling, instrumental music, and impact and ambience audio. Running generation requires a separately configured ComfyUI server and the relevant models.\n\nThis project supplies orchestration and recipes around ComfyUI and existing models; those upstream tools and model creators retain their own attribution and licenses.",
+  "status": "prototype",
+  "stack": [
+    "Node.js",
+    "ComfyUI",
+    "Image workflows",
+    "Audio workflows"
+  ],
+  "featured": false,
+  "repository": "https://github.com/athsrueas/qwen-local",
+  "website": "",
+  "category": "game-assets",
+  "demo": {
+    "enabled": false,
+    "title": "Try the app",
+    "url": ""
+  }
+}

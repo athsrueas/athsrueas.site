@@ -1,0 +1,21 @@
+{
+  "title": "Way Music Lab",
+  "summary": "An engine-independent procedural music generator with orchestral playback, variable meters, narrative scoring, and MIDI, JSON, and WAV export.",
+  "description": "Way Music Lab generates seeded game scores and plays them in the browser using recorded orchestral instruments. It includes fantasy scene presets, intensity controls, variable time-signature cycles, and syncopated math-rock rhythms. Scores can be exported as MIDI or JSON, with offline WAV rendering.\n\nA narrative score director connects an authored theme to title screens, exploration, player movement, danger, and timed story cues. The composition core and score contract are portable; browser playback is implemented, while a native Unreal adapter remains future work.\n\nThe original software is MIT-licensed. Its compact recorded orchestra uses CC0 VSCO CE recordings with bundled attribution.",
+  "status": "prototype",
+  "stack": [
+    "JavaScript",
+    "Web Audio",
+    "MIDI",
+    "Procedural music"
+  ],
+  "featured": true,
+  "repository": "https://github.com/way-under-games/Way-Music-Lab",
+  "website": "",
+  "category": "game-assets",
+  "demo": {
+    "enabled": false,
+    "title": "Try the app",
+    "url": ""
+  }
+}

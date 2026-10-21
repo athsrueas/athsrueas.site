@@ -22,6 +22,7 @@ const software = defineCollection({
     status: z.enum(["planned", "prototype", "active", "archived"]),
     stack: z.array(z.string().min(1).max(60)).max(20),
     featured: z.boolean(),
+    category: z.enum(["software", "game-assets"]).default("software"),
     repository: z.union([z.literal(""), z.url({ protocol: /^https$/ })]),
     website: z.union([z.literal(""), z.url({ protocol: /^https$/ })]),
     source: z.object({

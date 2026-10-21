@@ -1,0 +1,20 @@
+{
+  "title": "AssetForge",
+  "summary": "A game-asset build system designed to turn asset specifications and art direction into validated, engine-ready outputs.",
+  "description": "AssetForge is a compiler and build-system design for generative game art. The proposed pipeline accepts asset specifications and style contracts, selects procedural or generative sources, normalizes and validates results, and produces portable assets with engine-specific adapters.\n\nThe current project is at the research and design stage. The architecture covers asset schemas, deterministic UI-state derivation, provenance, incremental builds, and Unreal integration. Existing ComfyUI generation tools provide reusable image and audio primitives; the integrated AssetForge build system is not yet implemented.",
+  "status": "planned",
+  "stack": [
+    "Asset pipelines",
+    "ComfyUI",
+    "Unreal Engine"
+  ],
+  "featured": true,
+  "repository": "",
+  "website": "",
+  "category": "game-assets",
+  "demo": {
+    "enabled": false,
+    "title": "Try the app",
+    "url": ""
+  }
+}

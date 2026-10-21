@@ -6,7 +6,7 @@ import { links, site } from "../content/site";
 const posts = (await getCollection("writing")).sort((a, b) => a.data.order - b.data.order).slice(0, 3);
 const projects = (await getCollection("software")).sort((a, b) =>
   Number(b.data.featured) - Number(a.data.featured) || a.data.title.localeCompare(b.data.title)
-).slice(0, 2);
+).slice(0, 4);
 const community = [
   {title: "Third Place", text: "A place to gather", href: links.thirdPlaceSite},
   {title: "The Graph", text: "The community behind my advocacy work", href: links.theGraph},

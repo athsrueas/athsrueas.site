@@ -208,6 +208,8 @@
 .resource-description { color: var(--color-muted); font: 12px/1.6 var(--font-sans); }
 .resource-list a:hover .resource-title { text-decoration: underline; }
 .catalog-page { padding-block: 64px 80px; }
+.project-group { margin-top: 48px; }
+.project-group-title { font-size: 25px; margin-bottom: 24px; font-weight: 480; }
 .page-intro { margin-bottom: 44px; }
 .page-intro h1 { margin-top: 14px; font-size: 48px; }
 .page-intro > p:last-child { max-width: 620px; margin-top: 20px; color: var(--color-muted); font-size: 18px; line-height: 1.75; }
