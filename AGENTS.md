@@ -7,6 +7,12 @@ iframes. Only HTTPS demo URLs on a different origin may use `allow-same-origin`;
 never embed same-origin executable demos or inject repository source into the page.
 Essays live as Markdown entries in a content collection.
 
+## Visual style — user preference
+
+Keep the original understated paper-and-serif appearance. Use plain text links;
+avoid decorative arrows, prominent call-to-action buttons, and boxed project cards.
+Improve grouping and spacing without turning the personal site into a marketing page.
+
 ## Commands (Node 22+)
 
 - `npm install` — install dependencies

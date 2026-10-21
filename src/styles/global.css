@@ -3,7 +3,7 @@
 @theme {
   --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
   --font-serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
 
   --color-paper: #f4f1ea;
   --color-paper-raised: #fbf9f4;
@@ -149,7 +149,7 @@
   color: var(--color-ink-soft);
 }
 
-/* Shared page rhythm and navigation. Keep small interface text distinct from prose. */
+/* Shared page rhythm and restrained text navigation. */
 .site-shell { width: 100%; max-width: 1080px; margin-inline: auto; padding-inline: 40px; }
 .site-header { position: relative; z-index: 20; border-bottom: 1px solid var(--color-rule); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 80px; gap: 24px; }
@@ -168,35 +168,30 @@
 .footer-links a { display: inline-block; padding-block: 10px; color: var(--color-muted); text-decoration: none; }
 .footer-links a:hover { color: var(--color-ink); text-decoration: underline; }
 .eyebrow { font: 11px/1.6 var(--font-sans); color: var(--color-muted); letter-spacing: .14em; text-transform: uppercase; }
-.quiet-link { display: inline-flex; align-items: center; gap: 10px; font: 13px/1.5 var(--font-sans); color: var(--color-ink-soft); text-decoration: none; padding-block: 10px; }
+.quiet-link { display: inline-flex; align-items: center; gap: 10px; font: 13px/1.5 var(--font-sans); color: var(--color-ink-soft); text-decoration: underline; text-decoration-color: var(--color-rule); padding-block: 8px; }
 .quiet-link:hover { text-decoration: underline; }
-.quiet-link span { color: var(--color-muted); }
 .home-intro { padding-block: 76px 64px; }
 .home-intro h1 { max-width: 800px; margin-top: 20px; font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 1.04; font-weight: 480; letter-spacing: -.045em; }
 .intro-tagline { max-width: 620px; margin-top: 22px; color: var(--color-muted); font-size: 18px; line-height: 1.7; }
 .intro-description { max-width: 650px; margin-top: 24px; font-size: 18px; line-height: 1.8; }
 .intro-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 18px 28px; margin-top: 30px; }
-.primary-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 46px; padding: 12px 18px; border-radius: 4px; background: var(--color-ink-soft); color: var(--color-paper-raised); text-decoration: none; font: 13px/1.5 var(--font-sans); }
-.primary-link:hover { background: var(--color-ink); }
 .home-section { padding-block: 48px; border-top: 1px solid var(--color-rule); }
 .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
 .home-section h2 { font-size: 30px; font-weight: 480; }
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.project-card { min-width: 0; overflow-wrap: anywhere; display: flex; flex-direction: column; align-items: flex-start; padding: 28px; background: var(--color-paper-raised); border: 1px solid var(--color-rule); border-radius: 6px; }
+.project-card { min-width: 0; overflow-wrap: anywhere; display: flex; flex-direction: column; align-items: flex-start; padding: 20px 0; background: transparent; border: 0; border-top: 1px solid var(--color-rule); border-radius: 0; }
 .project-meta { font: 11px/1.6 var(--font-sans); color: var(--color-muted); letter-spacing: .06em; text-transform: uppercase; }
 .project-card :is(h2,h3) { margin-top: 16px; font-size: 27px; font-weight: 480; line-height: 1.2; }
-.project-card :is(h2,h3) a { text-decoration: none; }
+.project-card :is(h2,h3) a { text-decoration: underline; text-decoration-color: var(--color-rule); }
 .project-card :is(h2,h3) a:hover { text-decoration: underline; }
 .project-summary { flex: 1; margin-top: 14px; font-size: 16px; line-height: 1.75; color: var(--color-ink-soft); }
 .project-tags { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 20px; font: 12px/1.6 var(--font-sans); color: var(--color-muted); }
-.project-action { margin-top: 20px; }
 .essay-list { list-style: none; }
 .essay-list li + li { border-top: 1px solid var(--color-rule); }
 .essay-link { display: flex; justify-content: space-between; gap: 24px; padding-block: 24px; text-decoration: none; }
 .essay-link h3 { font-size: 23px; font-weight: 480; line-height: 1.3; }
 .essay-link:hover h3 { text-decoration: underline; }
 .essay-link p { max-width: 720px; margin-top: 10px; color: var(--color-muted); font-size: 15px; line-height: 1.7; }
-.essay-arrow { flex-shrink: 0; color: var(--color-muted); font: 18px/1.5 var(--font-sans); }
 .about-section { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; }
 .about-section h2 { margin-top: 12px; }
 .about-copy p { font-size: 17px; line-height: 1.8; }
@@ -206,12 +201,11 @@
 .personal-links { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding-bottom: 64px; }
 .personal-links h2 { font-size: 25px; }
 .resource-list { margin-top: 24px; }
-.resource-list li + li { border-top: 1px solid var(--color-rule); }
-.resource-list a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 17px; text-decoration: none; }
+.resource-list li + li { margin-top: 12px; }
+.resource-list a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 4px; text-decoration: none; }
 .resource-copy { display: flex; flex-direction: column; gap: 4px; }
-.resource-title { font-size: 18px; line-height: 1.4; }
+.resource-title { font-size: 17px; line-height: 1.5; text-decoration: underline; text-decoration-color: var(--color-rule); }
 .resource-description { color: var(--color-muted); font: 12px/1.6 var(--font-sans); }
-.resource-list a > span:last-child { color: var(--color-muted); font-family: var(--font-sans); }
 .resource-list a:hover .resource-title { text-decoration: underline; }
 .catalog-page { padding-block: 64px 80px; }
 .page-intro { margin-bottom: 44px; }
@@ -237,7 +231,7 @@
   .section-heading { gap: 16px; align-items: baseline; margin-bottom: 22px; }
   .section-heading .quiet-link { flex-shrink: 0; font-size: 12px; }
   .project-grid, .about-section, .personal-links { grid-template-columns: 1fr; }
-  .project-card { padding: 24px; }
+  .project-card { padding: 20px 0; }
   .about-section { gap: 24px; }
   .personal-links { gap: 36px; padding-bottom: 48px; }
   .essay-link h3 { font-size: 21px; }

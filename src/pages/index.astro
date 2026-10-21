@@ -21,38 +21,41 @@ const interests = [
 <BaseLayout description={site.description}>
   <main class="site-shell home-page">
     <section class="home-intro" aria-labelledby="intro-title">
-      <p class="eyebrow">Software, writing & community</p>
+      <p class="eyebrow">{site.mark} ATHSRUEAS</p>
       <h1 id="intro-title">{site.person}</h1>
       <p class="intro-tagline">{site.tagline}</p>
       <p class="intro-description">{site.intro}</p>
       <div class="intro-actions">
-        <a class="primary-link" href="/projects/">Explore projects <span aria-hidden="true">↗</span></a>
-        <a class="quiet-link" href="/writing/">Read my writing <span aria-hidden="true">→</span></a>
+        <a class="quiet-link" href="/cv/">CV</a>
+        <a class="quiet-link" href="/writing/">Writing</a>
+        <a class="quiet-link" href="/projects/">Projects</a>
+        <a class="quiet-link" href={links.linkedin}>LinkedIn</a>
+        <a class="quiet-link" href={links.x}>X</a>
       </div>
     </section>
 
     <section class="home-section" aria-labelledby="projects-title">
-      <div class="section-heading"><h2 id="projects-title">Selected projects</h2><a class="quiet-link" href="/projects/">All projects <span aria-hidden="true">→</span></a></div>
+      <div class="section-heading"><h2 id="projects-title">Selected projects</h2><a class="quiet-link" href="/projects/">All projects</a></div>
       <div class="project-grid">
         {projects.map(({id, data}) => <ProjectCard href={`/projects/${id}/`} title={data.title} summary={data.summary} status={data.status} stack={data.stack} hasDemo={data.demo.enabled && Boolean(data.demo.url)} />)}
       </div>
     </section>
 
     <section class="home-section" aria-labelledby="writing-title">
-      <div class="section-heading"><h2 id="writing-title">Selected writing</h2><a class="quiet-link" href="/writing/">All essays <span aria-hidden="true">→</span></a></div>
+      <div class="section-heading"><h2 id="writing-title">Selected writing</h2><a class="quiet-link" href="/writing/">All essays</a></div>
       <ul class="essay-list">
-        {posts.map(post => <li><a class="essay-link" href={`/writing/${post.id}/`}><div><h3>{post.data.title}</h3><p>{post.data.description}</p></div><span class="essay-arrow" aria-hidden="true">↗</span></a></li>)}
+        {posts.map(post => <li><a class="essay-link" href={`/writing/${post.id}/`}><div><h3>{post.data.title}</h3><p>{post.data.description}</p></div></a></li>)}
       </ul>
     </section>
 
     <section class="home-section about-section" aria-labelledby="about-title">
-      <div><p class="eyebrow">A little background</p><h2 id="about-title">About me</h2></div>
-      <div class="about-copy"><p>My background is in applied mathematics and secondary math education. I taught at Christel House Indy from 2018–2024 and worked as an independent Graph Advocate from 2022–2024.</p><p class="muted-copy">{site.educationLine}. Licensed teacher in Indiana.</p><a class="quiet-link" href="/cv/">Experience & education <span aria-hidden="true">→</span></a></div>
+      <div><h2 id="about-title">About</h2></div>
+      <div class="about-copy"><p>My background is in applied mathematics and secondary math education. I taught at Christel House Indy from 2018–2024 and worked as an independent Graph Advocate from 2022–2024.</p><p class="muted-copy">{site.educationLine}. Licensed teacher in Indiana.</p><a class="quiet-link" href="/cv/">Experience & education</a></div>
     </section>
 
     <section class="home-section personal-links" aria-label="Community and personal links">
-      <div><h2>Community</h2><ul class="resource-list">{community.map(link => <li><a href={link.href}><span class="resource-copy"><span class="resource-title">{link.title}</span><span class="resource-description">{link.text}</span></span><span aria-hidden="true">↗</span></a></li>)}</ul></div>
-      <div><h2>Interests & support</h2><ul class="resource-list">{interests.map(link => <li><a href={link.href}><span class="resource-copy"><span class="resource-title">{link.title}</span><span class="resource-description">{link.text}</span></span><span aria-hidden="true">↗</span></a></li>)}</ul></div>
+      <div><h2>Community</h2><ul class="resource-list">{community.map(link => <li><a href={link.href}><span class="resource-copy"><span class="resource-title">{link.title}</span><span class="resource-description">{link.text}</span></span></a></li>)}</ul></div>
+      <div><h2>Interests & support</h2><ul class="resource-list">{interests.map(link => <li><a href={link.href}><span class="resource-copy"><span class="resource-title">{link.title}</span><span class="resource-description">{link.text}</span></span></a></li>)}</ul></div>
     </section>
   </main>
 </BaseLayout>
