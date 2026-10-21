@@ -1,7 +1,7 @@
 {
   "title": "ATHSRUEAS Studio",
-  "summary": "A local studio for writing, showcasing software, and building interactive demos for my personal site.",
-  "description": "A personal publishing workspace adapted from open-sitebuilder. It combines a visual canvas with native essay and software-project editors, writes directly to the Astro site, and keeps recovery copies when content changes.\n\nThe layout lab below is a small example of the browser-only demos the studio can build. Adjust the controls to explore the relationship between columns, spacing, and available space.",
+  "summary": "A local studio for writing and showcasing software through attached GitHub repositories.",
+  "description": "A personal publishing workspace adapted from open-sitebuilder, with a visual canvas and native essay and software-project editors. Demo applications are built from attached repositories and previewed independently.",
   "status": "prototype",
   "stack": [
     "Python",
@@ -12,10 +12,15 @@
   "repository": "https://github.com/athsrueas/athsrueas-blog-studio",
   "website": "",
   "demo": {
-    "enabled": true,
-    "title": "Try the layout lab",
-    "html": "<main><p class=\"eyebrow\">INTERACTIVE PLAYGROUND</p><h1>A little room to experiment.</h1><p>Change the grid. See what fits.</p><div class=\"controls\"><label>Columns <output id=\"columns-value\">3</output><input id=\"columns\" type=\"range\" min=\"1\" max=\"5\" value=\"3\"></label><label>Spacing <output id=\"gap-value\">12 px</output><input id=\"gap\" type=\"range\" min=\"0\" max=\"32\" value=\"12\"></label></div><div id=\"grid\" aria-label=\"Layout preview\"><div>01</div><div>02</div><div>03</div><div>04</div><div>05</div><div>06</div><div>07</div><div>08</div><div>09</div></div></main>",
-    "css": "*{box-sizing:border-box}body{margin:0;background:#edf2ed;color:#223c32;font:16px system-ui}main{padding:28px;max-width:820px;margin:auto}h1{font:32px Georgia;margin:8px 0}p{line-height:1.5}.eyebrow{font-size:11px;letter-spacing:.16em}.controls{display:flex;gap:28px;flex-wrap:wrap;margin:24px 0}label{display:grid;gap:8px;min-width:160px}output{font-weight:600}input{accent-color:#315d49}#grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}#grid div{padding:20px 12px;background:#315d49;color:#fff;border-radius:8px;min-width:0;text-align:center}#grid div:nth-child(3n){background:#b6cc87;color:#233b2f}",
-    "js": "const grid=document.querySelector('#grid'); for(const name of ['columns','gap']){document.querySelector('#'+name).addEventListener('input',event=>{const value=event.target.value;document.querySelector('#'+name+'-value').textContent=value+(name==='gap'?' px':'');if(name==='columns')grid.style.gridTemplateColumns=`repeat(${value},minmax(0,1fr))`;else grid.style.gap=value+'px';});}"
+    "enabled": false,
+    "title": "Try the app",
+    "url": ""
+  },
+  "source": {
+    "ref": "main",
+    "root": ".",
+    "buildScript": "build",
+    "output": "dist",
+    "pagesProject": ""
   }
 }

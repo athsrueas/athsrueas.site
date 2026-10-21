@@ -2,8 +2,9 @@
 
 Static personal site of Thomas Freestone. Built with **Astro 7 + Tailwind 4**.
 The build emits static HTML/CSS. Software project pages may include browser-only
-HTML/CSS/JavaScript demos inside opaque sandboxed iframes (`allow-scripts` only).
-Never add `allow-same-origin` to these frames. Keep demo code out of the parent page.
+previews of independently built repository applications in cross-origin sandboxed
+iframes. Only HTTPS demo URLs on a different origin may use `allow-same-origin`;
+never embed same-origin executable demos or inject repository source into the page.
 Essays live as Markdown entries in a content collection.
 
 ## Commands (Node 22+)

@@ -1,0 +1,27 @@
+{
+  "title": "Geo Companion",
+  "summary": "A read-only companion to Geo, with graph explorers, education dashboards, and Indianapolis outreach apps.",
+  "description": "Geo Companion is built independently as a React/Vite application. This showcase attaches its GitHub repository and builds a separate preview, while the original application and its live hosting remain independently managed.",
+  "status": "active",
+  "stack": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Geo"
+  ],
+  "featured": true,
+  "repository": "https://github.com/athsrueas-geocurator/GeoCompanion",
+  "website": "https://geocompanion.dpdns.org/",
+  "source": {
+    "ref": "main",
+    "root": ".",
+    "buildScript": "build",
+    "output": "dist",
+    "pagesProject": ""
+  },
+  "demo": {
+    "enabled": true,
+    "title": "Explore Geo Companion",
+    "url": ""
+  }
+}

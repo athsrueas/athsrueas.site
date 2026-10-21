@@ -24,12 +24,14 @@ const software = defineCollection({
     featured: z.boolean(),
     repository: z.union([z.literal(""), z.url({ protocol: /^https$/ })]),
     website: z.union([z.literal(""), z.url({ protocol: /^https$/ })]),
+    source: z.object({
+      ref: z.string(), root: z.string(), buildScript: z.string(), output: z.string(),
+      pagesProject: z.string().optional(),
+    }).optional(),
     demo: z.object({
       enabled: z.boolean(),
       title: z.string().min(1).max(200),
-      html: z.string().max(200000),
-      css: z.string().max(200000),
-      js: z.string().max(200000),
+      url: z.union([z.literal(""), z.url({ protocol: /^https$/ })]).default(""),
     }),
   }),
 });
