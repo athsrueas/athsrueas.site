@@ -1,7 +1,9 @@
 # ATHSRUEAS — personal site (Astro · static)
 
 Static personal site of Thomas Freestone. Built with **Astro 7 + Tailwind 4**.
-The build emits pure static HTML/CSS — no framework JS in the output.
+The build emits static HTML/CSS. Software project pages may include browser-only
+HTML/CSS/JavaScript demos inside opaque sandboxed iframes (`allow-scripts` only).
+Never add `allow-same-origin` to these frames. Keep demo code out of the parent page.
 Essays live as Markdown entries in a content collection.
 
 ## Commands (Node 22+)
@@ -19,6 +21,10 @@ Essays live as Markdown entries in a content collection.
   frontmatter: `title`, `description`, `oldPath`, `order`, optional `updatedDate`.
   Keep `order` contiguous; the UI sorts by it.
 - `src/content/site.ts` — site metadata, nav, social links
+- `src/content/software/*.json` — software showcases and optional demo source;
+  edited by the companion ATHSRUEAS Studio in `../athsrueas-sitebuilder`.
+- `src/pages/projects/` — project catalog and project details; preserve the dephi route.
+- `src/components/InteractiveDemo.astro` — isolated browser demo renderer.
 - `src/content.config.ts` — content-collection schema
 - `src/styles/global.css` — Tailwind v4 theme tokens + article typography
 - `src/layouts/BaseLayout.astro` — document shell (meta, og, fonts, header/footer)

@@ -1,0 +1,26 @@
+---
+import { Buffer } from "node:buffer";
+
+interface Props {
+  demo: { title: string; html: string; css: string; js: string };
+}
+const { demo } = Astro.props;
+// The opaque sandbox can execute the demo without accessing the parent page.
+// A data URL keeps JavaScript strings containing closing script tags intact.
+const script = Buffer.from(demo.js, "utf-8").toString("base64");
+const document = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>${demo.css}</style></head><body>${demo.html}<script src="data:text/javascript;base64,${script}"></script></body></html>`;
+---
+
+<section class="mt-12 border-t border-rule pt-8" aria-label={demo.title}>
+  <p class="text-sm tracking-[0.14em] uppercase text-muted">Interactive demo</p>
+  <h2 class="mt-3 text-3xl">{demo.title}</h2>
+  <iframe
+    class="mt-6 w-full rounded-md border border-rule bg-white"
+    style="height: 520px;"
+    title={demo.title}
+    srcdoc={document}
+    sandbox="allow-scripts"
+    referrerpolicy="no-referrer"
+    loading="lazy"
+  />
+</section>
