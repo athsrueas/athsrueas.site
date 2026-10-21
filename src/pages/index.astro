@@ -1,136 +1,58 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
 import { links, site } from "../content/site";
-
-const posts = (await getCollection("writing")).sort((a, b) => a.data.order - b.data.order);
+const posts = (await getCollection("writing")).sort((a, b) => a.data.order - b.data.order).slice(0, 3);
+const projects = (await getCollection("software")).sort((a, b) =>
+  Number(b.data.featured) - Number(a.data.featured) || a.data.title.localeCompare(b.data.title)
+).slice(0, 2);
+const community = [
+  {title: "Third Place", text: "A place to gather", href: links.thirdPlaceSite},
+  {title: "The Graph", text: "The community behind my advocacy work", href: links.theGraph},
+  {title: "Telegram", text: "@Athsrueas", href: links.telegram},
+];
+const interests = [
+  {title: "Currently reading", text: "Books on StoryGraph", href: links.storygraph},
+  {title: "Magic shop", text: "My TCGplayer storefront", href: links.tcgplayer},
+  {title: "Support my work", text: "Ko-fi", href: links.kofi},
+];
 ---
-
-<BaseLayout
-  title="ATHSRUEAS"
-  description="Personal site of Thomas Freestone — husband, father, teacher, advocate, and community builder."
->
-  <main>
-    <section class="mx-auto max-w-5xl px-5 pb-16 pt-14 sm:px-8 sm:pb-24 sm:pt-20">
-      <p class="font-display text-sm tracking-[0.22em] text-ink-soft">
-        {site.mark} ATHSRUEAS
-      </p>
-      <h1
-        class="mt-4 max-w-3xl font-display text-[clamp(2.4rem,7vw,5.25rem)] font-medium leading-[0.95] tracking-[-0.04em] text-ink"
-      >
-        {site.person}
-      </h1>
-      <p class="mt-6 max-w-2xl text-lg text-ink-soft sm:text-xl">{site.tagline}</p>
-      <p class="mt-8 max-w-2xl text-base leading-7 text-ink sm:text-[1.125rem] sm:leading-8">
-        {site.intro}
-      </p>
-      <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm tracking-[0.12em] uppercase">
-        <a href="/cv/" class="underline decoration-rule underline-offset-4 hover:decoration-ink">
-          CV
-        </a>
-        <a href="/writing/" class="underline decoration-rule underline-offset-4 hover:decoration-ink">
-          Writing
-        </a>
-        <a href={links.linkedin} class="underline decoration-rule underline-offset-4 hover:decoration-ink">
-          LinkedIn
-        </a>
-        <a href={links.x} class="underline decoration-rule underline-offset-4 hover:decoration-ink">
-          X
-        </a>
+<BaseLayout description={site.description}>
+  <main class="site-shell home-page">
+    <section class="home-intro" aria-labelledby="intro-title">
+      <p class="eyebrow">Software, writing & community</p>
+      <h1 id="intro-title">{site.person}</h1>
+      <p class="intro-tagline">{site.tagline}</p>
+      <p class="intro-description">{site.intro}</p>
+      <div class="intro-actions">
+        <a class="primary-link" href="/projects/">Explore projects <span aria-hidden="true">↗</span></a>
+        <a class="quiet-link" href="/writing/">Read my writing <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
-    <section
-      class="mx-auto grid max-w-5xl gap-12 px-5 py-16 sm:grid-cols-2 sm:gap-16 sm:px-8 sm:py-24"
-    >
-      <div>
-        <h2 class="font-display text-sm tracking-[0.18em] uppercase text-muted">About</h2>
-        <p class="mt-4 text-[1.0625rem] leading-7">{site.identityLine}</p>
-        <p class="mt-4 text-[1.0625rem] leading-7 text-ink-soft">
-          {site.educationLine}. Licensed teacher in Indiana. Graph Advocate. Currently leading IT
-          projects at Performance Services.
-        </p>
-      </div>
-      <div>
-        <h2 class="font-display text-sm tracking-[0.18em] uppercase text-muted">Work</h2>
-        <p class="mt-4 text-[1.0625rem] leading-7">
-          Software (IT) Project Manager at Performance Services, serving K-12 schools and
-          municipalities across the United States.
-        </p>
-        <p class="mt-4 text-[1.0625rem] leading-7 text-ink-soft">
-          Previously mathematics teacher at Christel House Indy, 2018–2024, and an independent
-          Graph Advocate from 2022–2024.
-        </p>
-        <p class="mt-5">
-          <a href="/cv/" class="text-sm tracking-[0.12em] uppercase underline decoration-rule">
-            Full CV
-          </a>
-        </p>
-      </div>
-      <div>
-        <h2 class="font-display text-sm tracking-[0.18em] uppercase text-muted">Background</h2>
-        <p class="mt-4 text-[1.0625rem] leading-7">
-          Applied mathematics, secondary math, and a long stretch of classroom work in
-          Indianapolis — community, content, teacher.
-        </p>
-        <p class="mt-4 text-[1.0625rem] leading-7 text-ink-soft">
-          Weaving new threads, stronger than the fray.
-        </p>
-      </div>
-      <div>
-        <h2 class="font-display text-sm tracking-[0.18em] uppercase text-muted">Community</h2>
-        <p class="mt-4 text-[1.0625rem] leading-7">
-          Graph Advocate. Third Place —{" "}
-          <a href={links.thirdPlaceWiki} class="underline decoration-rule">
-            a place to gather
-          </a>
-          . Support on Ko-fi · Telegram @Athsrueas
-        </p>
-        <ul class="mt-5 flex flex-col gap-2 text-sm">
-          <li>
-            <a href={links.kofi} class="underline decoration-rule">Support on Ko-fi</a>
-          </li>
-          <li>
-            <a href={links.storygraph} class="underline decoration-rule">Currently reading</a>
-          </li>
-          <li>
-            <a href={links.tcgplayer} class="underline decoration-rule">Magic shop</a>
-          </li>
-          <li>
-            <a href="/projects/dephi/" class="underline decoration-rule">deφ</a>
-          </li>
-        </ul>
+    <section class="home-section" aria-labelledby="projects-title">
+      <div class="section-heading"><h2 id="projects-title">Selected projects</h2><a class="quiet-link" href="/projects/">All projects <span aria-hidden="true">→</span></a></div>
+      <div class="project-grid">
+        {projects.map(({id, data}) => <ProjectCard href={`/projects/${id}/`} title={data.title} summary={data.summary} status={data.status} stack={data.stack} hasDemo={data.demo.enabled && Boolean(data.demo.url)} />)}
       </div>
     </section>
 
-    <section class="border-t border-rule">
-      <div class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-24">
-        <div class="flex items-end justify-between gap-6">
-          <h2 class="font-display text-3xl sm:text-4xl">Writing</h2>
-          <a href="/writing/" class="text-sm tracking-[0.12em] uppercase underline decoration-rule">
-            All essays
-          </a>
-        </div>
-        <ul class="mt-10 divide-y divide-rule border-y border-rule">
-          {
-            posts.map((post) => (
-              <li>
-                <a
-                  href={`/writing/${post.id}/`}
-                  class="group flex flex-col gap-2 py-6 no-underline sm:flex-row sm:items-baseline sm:justify-between sm:gap-10"
-                >
-                  <span class="font-display text-xl leading-snug group-hover:underline sm:text-2xl">
-                    {post.data.title}
-                  </span>
-                  <span class="max-w-md shrink-0 text-sm text-muted sm:text-right">
-                    {post.data.description}
-                  </span>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+    <section class="home-section" aria-labelledby="writing-title">
+      <div class="section-heading"><h2 id="writing-title">Selected writing</h2><a class="quiet-link" href="/writing/">All essays <span aria-hidden="true">→</span></a></div>
+      <ul class="essay-list">
+        {posts.map(post => <li><a class="essay-link" href={`/writing/${post.id}/`}><div><h3>{post.data.title}</h3><p>{post.data.description}</p></div><span class="essay-arrow" aria-hidden="true">↗</span></a></li>)}
+      </ul>
+    </section>
+
+    <section class="home-section about-section" aria-labelledby="about-title">
+      <div><p class="eyebrow">A little background</p><h2 id="about-title">About me</h2></div>
+      <div class="about-copy"><p>My background is in applied mathematics and secondary math education. I taught at Christel House Indy from 2018–2024 and worked as an independent Graph Advocate from 2022–2024.</p><p class="muted-copy">{site.educationLine}. Licensed teacher in Indiana.</p><a class="quiet-link" href="/cv/">Experience & education <span aria-hidden="true">→</span></a></div>
+    </section>
+
+    <section class="home-section personal-links" aria-label="Community and personal links">
+      <div><h2>Community</h2><ul class="resource-list">{community.map(link => <li><a href={link.href}><span class="resource-copy"><span class="resource-title">{link.title}</span><span class="resource-description">{link.text}</span></span><span aria-hidden="true">↗</span></a></li>)}</ul></div>
+      <div><h2>Interests & support</h2><ul class="resource-list">{interests.map(link => <li><a href={link.href}><span class="resource-copy"><span class="resource-title">{link.title}</span><span class="resource-description">{link.text}</span></span><span aria-hidden="true">↗</span></a></li>)}</ul></div>
     </section>
   </main>
 </BaseLayout>

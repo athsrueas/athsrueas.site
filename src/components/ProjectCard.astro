@@ -1,0 +1,22 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  summary: string;
+  status: string;
+  stack?: string[];
+  hasDemo?: boolean;
+  heading?: "h2" | "h3";
+}
+const { href, title, summary, status, stack = [], hasDemo = false, heading = "h3" } = Astro.props;
+const Heading = heading;
+---
+<article class="project-card">
+  <p class="project-meta">{status}{hasDemo ? " · Interactive demo" : ""}</p>
+  <Heading><a href={href}>{title}</a></Heading>
+  <p class="project-summary">{summary}</p>
+  {stack.length > 0 && <ul class="project-tags" aria-label="Technologies">
+    {stack.map(tag => <li>{tag}</li>)}
+  </ul>}
+  <a class="quiet-link project-action" href={href}>Explore project <span aria-hidden="true">↗</span></a>
+</article>

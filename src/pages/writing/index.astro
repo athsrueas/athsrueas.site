@@ -20,8 +20,7 @@ const formatDate = (date: string) =>
     <p class="text-sm tracking-[0.18em] uppercase text-muted">Essays</p>
     <h1 class="mt-3 font-display text-4xl sm:text-5xl">Writing</h1>
     <p class="mt-5 max-w-xl leading-7 text-ink-soft">
-      Long-form notes on ownership, The Graph, and showing up for the work. Dates are included
-      only when the original pages recorded them.
+      Essays on ownership, The Graph, and showing up for the work.
     </p>
     <ul class="mt-12 divide-y divide-rule border-y border-rule">
       {
@@ -33,7 +32,7 @@ const formatDate = (date: string) =>
               </h2>
             </a>
             {post.data.updatedDate ? (
-              <p class="mt-2 text-sm text-muted">Edited {formatDate(post.data.updatedDate)}</p>
+              <p class="mt-2 font-sans text-xs text-muted">Edited {formatDate(post.data.updatedDate)}</p>
             ) : null}
             <p class="mt-3 leading-7 text-ink-soft">{post.data.description}</p>
           </li>

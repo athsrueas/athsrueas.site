@@ -1,33 +1,17 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
 const projects = (await getCollection("software")).sort((a, b) =>
   Number(b.data.featured) - Number(a.data.featured) || a.data.title.localeCompare(b.data.title)
 );
 ---
 <BaseLayout title="Projects" description="Software, experiments, and interactive demos by Thomas Freestone.">
-  <main class="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
-    <p class="text-sm tracking-[0.16em] uppercase text-muted">Software & experiments</p>
-    <h1 class="mt-4 font-display text-5xl">Things I’m building.</h1>
-    <p class="mt-6 max-w-2xl text-lg text-muted">Tools, ideas, and small experiments. Explore the work, look under the hood, and try a demo.</p>
-    <div class="mt-12 grid gap-6 md:grid-cols-2">
-      {projects.map(({ id, data }) => (
-        <article class="flex flex-col rounded-md border border-rule bg-paper-raised p-7">
-          <p class="text-xs tracking-[0.14em] uppercase text-muted">{data.status}{data.demo.enabled && data.demo.url ? " · Interactive demo" : ""}</p>
-          <h2 class="mt-4 text-3xl"><a href={`/projects/${id}/`}>{data.title}</a></h2>
-          <p class="mt-4 flex-1">{data.summary}</p>
-          <ul class="mt-5 flex flex-wrap gap-2" aria-label="Technologies">
-            {data.stack.map(tag => <li class="rounded border border-rule px-2 py-1 text-xs">{tag}</li>)}
-          </ul>
-          <a class="mt-6 text-sm" href={`/projects/${id}/`}>Explore project <span aria-hidden="true">→</span></a>
-        </article>
-      ))}
-      <article class="rounded-md border border-rule p-7">
-        <p class="text-xs tracking-[0.14em] uppercase text-muted">Project concept</p>
-        <h2 class="mt-4 text-3xl"><a href="/projects/dephi/">deφ</a></h2>
-        <p class="mt-4">Transparency and accountability in the nonprofit sector.</p>
-        <a class="mt-6 inline-block text-sm" href="/projects/dephi/">Read about deφ <span aria-hidden="true">→</span></a>
-      </article>
+  <main class="site-shell catalog-page">
+    <header class="page-intro"><p class="eyebrow">Software & experiments</p><h1>Projects</h1><p>Tools, ideas, and small experiments. Explore the work and try an app.</p></header>
+    <div class="project-grid">
+      {projects.map(({id, data}) => <ProjectCard heading="h2" href={`/projects/${id}/`} title={data.title} summary={data.summary} status={data.status} stack={data.stack} hasDemo={data.demo.enabled && Boolean(data.demo.url)} />)}
+      <ProjectCard heading="h2" href="/projects/dephi/" title="deφ" summary="Transparency and accountability in the nonprofit sector." status="Project concept" />
     </div>
   </main>
 </BaseLayout>
