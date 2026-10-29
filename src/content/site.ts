@@ -8,7 +8,7 @@ export const site = {
   description:
     "Personal site of Thomas Freestone — husband, father, teacher, advocate, and community builder. Writing, CV, and work.",
   intro:
-    "I am a Software (IT) Project Manager at Performance Services. We serve communities across the United States as a leader in Design Build Construction, working mostly with K-12 institutions and municipalities.",
+    "I am an IT Project Manager at Performance Services, working across business intelligence, digital transformation, and enterprise systems. My work combines project delivery with hands-on software development, AI-powered document processing, systems integration, and Linux application deployment.",
   educationLine: "BS Applied Mathematics — Secondary Math",
   identityLine: "Thomas Freestone · BS Applied Math · Purdue at Indianapolis",
 } as const;

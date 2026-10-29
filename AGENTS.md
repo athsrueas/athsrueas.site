@@ -13,6 +13,14 @@ Keep the original understated paper-and-serif appearance. Use plain text links;
 avoid decorative arrows, prominent call-to-action buttons, and boxed project cards.
 Improve grouping and spacing without turning the personal site into a marketing page.
 
+## Current work description
+
+The official title remains IT Project Manager at Performance Services. The role's
+scope expanded in January 2026 to business intelligence, digital transformation,
+and enterprise systems, including hands-on development and production support.
+Do not present that scope as a new official title or a new employment start date.
+Odoo e-learning content management is no longer a current responsibility.
+
 ## Commands (Node 22+)
 
 - `npm install` — install dependencies

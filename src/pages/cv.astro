@@ -7,14 +7,16 @@ const jobs = [
     org: "Performance Services",
     role: "IT Project Manager",
     dates: "2024–Present",
+    scope: "Expanded responsibilities since January 2026: Business Intelligence, Digital Transformation and Enterprise Systems.",
     points: [
-      "Lead Strategic IT Initiatives: Spearhead critical IT projects that align with organizational goals, ensuring seamless integration and optimal performance.",
-      "Stakeholder Collaboration: Engage with key stakeholders, including senior management and cross-functional teams, to drive project success and foster a collaborative environment.",
-      "Risk Management: Identify potential risks and develop mitigation strategies to ensure project timelines and budgets are adhered to, minimizing disruptions.",
-      "Resource Allocation: Efficiently allocate resources, including personnel and technology, to maximize productivity and achieve project milestones.",
-      "Quality Assurance: Implement rigorous quality assurance processes to ensure deliverables meet the highest standards and exceed client expectations.",
-      "Continuous Improvement: Promote a culture of continuous improvement by analyzing project outcomes and implementing best practices for future initiatives.",
-      "E-Learning Content Manager: Oversee the development, organization, and maintenance of high-quality e-learning materials within the ODOO platform, ensuring they meet educational standards and enhance learner engagement.",
+      "Lead technology and business process improvement projects from requirements and planning through implementation, business acceptance, employee adoption, and evaluation. Coordinate stakeholders, vendors, schedules, budgets, risks, and build-versus-buy decisions.",
+      "Analyze departmental workflows and information needs; translate them into business rules, functional requirements, and testable acceptance criteria that reduce duplicate entry and manual handoffs.",
+      "Design, build, test, and maintain business applications, including user interfaces, processing logic, and data access. Use AI-assisted development tools while reviewing generated code and validating application behavior.",
+      "Develop AI-powered document-processing workflows for utility bills, scans, and business records, covering intake, extraction, field mapping, validation, human review, and export with source traceability and safe retries.",
+      "Build APIs, systems integrations, and workflow automation with appropriate authentication, access controls, logging, and exception handling. Support enterprise system conversions, data mapping, reconciliation, and production readiness.",
+      "Deploy and support applications on Linux, including services, dependencies, environment configuration, web routing, and reverse proxies. Manage versioned releases, preserve operational files, queues, and databases, and maintain recovery procedures.",
+      "Evaluate AI tools for business value, accuracy, reliability, data sensitivity, and cost. Work with subject matter experts and technology owners to apply approved standards, human review, and acceptance testing.",
+      "Deliver employee training, individual coaching, videos, and written guides for applications, AI tools, and digital workflows. Maintain user documentation and release notes, address adoption barriers, and evaluate effective use.",
     ],
   },
   {
@@ -80,7 +82,7 @@ const jobs = [
 
 <BaseLayout
   title="CV"
-  description="CV of Thomas C Freestone: IT project manager, mathematics teacher, Graph Advocate."
+  description="CV of Thomas C Freestone: IT Project Manager working across business intelligence, digital transformation, enterprise systems, and hands-on software development."
 >
   <main class="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">
     <p class="text-sm tracking-[0.18em] uppercase text-muted">Curriculum Vitae</p>
@@ -94,9 +96,12 @@ const jobs = [
         Summary
       </h2>
       <p class="mt-5 leading-7">
-        IT project manager at Performance Services, with a background in applied mathematics,
-        secondary mathematics education, and community building through The Graph.
-        Licensed teacher in Indiana.
+        IT Project Manager at Performance Services, working across business intelligence,
+        digital transformation, and enterprise systems. My responsibilities combine project
+        delivery and business analysis with hands-on software development, AI-powered
+        document processing, systems integration, and Linux deployment and production support.
+        My background is in applied mathematics, secondary mathematics education, and
+        community building through The Graph. Licensed teacher in Indiana.
       </p>
     </section>
 
@@ -113,6 +118,7 @@ const jobs = [
                 <p class="text-sm text-muted">{job.dates}</p>
               </div>
               <p class="mt-1 text-ink-soft">{job.role}</p>
+              {job.scope && <p class="mt-3 text-sm leading-6 text-muted">{job.scope}</p>}
               <ul class="mt-4 list-disc space-y-2 pl-5 text-[1.02rem] leading-7">
                 {job.points.map((point) => (
                   <li>{point}</li>
