@@ -1,15 +1,15 @@
 {
   "title": "ATHSRUEAS Studio",
   "summary": "A local studio for writing and showcasing software through attached GitHub repositories.",
-  "description": "A personal publishing workspace adapted from open-sitebuilder, with a visual canvas and native essay and software-project editors. Demo applications are built from attached repositories and previewed independently.",
+  "description": "ATHSRUEAS Studio is the local publishing workspace behind this personal site. It adapts Folio Studio’s visual canvas into a companion for writing, software showcases, and independently built application previews.\n\nThe native writing editor saves Markdown essays in the Astro site, while the project editor manages the structured records that become these project pages. Repository applications build separately and can be previewed in an isolated browser frame. The visual prototype canvas is not yet synchronized into the site’s Astro layouts.\n\nThis is a private, personal prototype rather than a public download. If you want a portfolio editor you can install and use, explore the public Folio Studio project instead.",
   "status": "prototype",
   "stack": [
     "Python",
     "Astro",
     "JavaScript"
   ],
-  "featured": true,
-  "repository": "https://github.com/athsrueas/athsrueas-blog-studio",
+  "featured": false,
+  "repository": "",
   "website": "",
   "demo": {
     "enabled": false,

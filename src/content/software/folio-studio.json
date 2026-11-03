@@ -1,0 +1,12 @@
+{
+  "title": "Folio Studio",
+  "summary": "A local portfolio editor for artists: arrange pages and artwork, then export a static site or publish it to Cloudflare Pages.",
+  "description": "Folio Studio gives an artist a local place to arrange and publish a portfolio. A Python server opens a browser editor; Astro builds the finished pages into a static website. The public project is called open-sitebuilder on GitHub.\n\nThe editor includes artwork galleries, sketchbooks, flexible page layouts, image editing, internal page links, and portfolio backups. Original uploads and project data stay in the local data folder. Publishing is a separate step, using the owner’s Cloudflare Pages project and credentials.\n\nFor Windows, follow the public repository’s installation instructions. You can edit and build locally without connecting a publishing account. Treat the installation folder and its data as working files to back up, not as a cloud-synced service.\n\nThis is a working project with limits: it manages one local portfolio, and broader undo/history and a signed application package remain future work. Upstream libraries and media tools are credited in the repository.",
+  "status": "active",
+  "stack": ["Python", "Astro", "JavaScript", "Cloudflare Pages"],
+  "featured": true,
+  "category": "software",
+  "repository": "https://github.com/athsrueas/open-sitebuilder",
+  "website": "",
+  "demo": {"enabled": false, "title": "Explore Folio Studio", "url": ""}
+}

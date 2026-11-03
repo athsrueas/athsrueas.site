@@ -2,7 +2,7 @@
 title: "Web3 is what you do"
 description: "A call to action: web3 is defined by work, not argument. How to get involved even if you cannot code."
 oldPath: "/hosted-blog-pages/web3-is-what-you-do"
-order: 5
+order: 6
 ---
 ## A call to action
 

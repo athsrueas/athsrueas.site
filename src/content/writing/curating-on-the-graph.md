@@ -2,7 +2,7 @@
 title: "Curating on The Graph"
 description: "Why you should consider being a Curator on The Graph, told through teaching, delegation, and a first curation journey."
 oldPath: "/hosted-blog-pages/curating-on-the-graph"
-order: 4
+order: 5
 ---
 The role of Curator on The Graph serves a vital function in vetting the quality and supporting the success of a subgraph.
 

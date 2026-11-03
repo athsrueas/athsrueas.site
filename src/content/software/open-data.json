@@ -1,0 +1,12 @@
+{
+  "title": "Open Data",
+  "summary": "Research, data preparation, and early education viewers for exploring access, inequality, and U.S. education initiatives.",
+  "description": "Open Data is a research workbench for bringing public sources into a form that people can inspect and reuse. Its education work includes source inventories, scripts for staging and transforming data, an educational-inequality viewer, and a separate U.S. education initiatives atlas.\n\nThe global work draws on sources such as the World Bank and UNESCO UIS, alongside other education and connectivity datasets. A central concern is keeping definitions, coverage gaps, and source caveats visible: education spending, enrollment, literacy, and attainment do not measure the same thing.\n\nThis repository holds research and preparation work; it is not itself a guarantee that a dataset has been published to Geo or independently reviewed. Geo Companion is the separate browser application for exploring supported published graph content. The publishing workflow is also separate.\n\nStart with the public README for the repository map, data workflows, and viewer instructions. Check the original source’s terms and the relevant documentation before reusing any dataset. These are evolving research tools, not a complete map of educational opportunity.",
+  "status": "active",
+  "stack": ["Python", "Open data", "Education", "Data visualization"],
+  "featured": true,
+  "category": "software",
+  "repository": "https://github.com/athsrueas/Open_Data",
+  "website": "",
+  "demo": {"enabled": false, "title": "Explore Open Data", "url": ""}
+}

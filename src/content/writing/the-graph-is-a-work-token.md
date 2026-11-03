@@ -2,7 +2,7 @@
 title: "The Graph is a Work Token"
 description: "A short summary of work tokens in crypto, with The Graph as the example, following Jose Maria Macedo."
 oldPath: "/hosted-blog-pages/the-graph-is-a-work-token"
-order: 6
+order: 7
 ---
 A quick summary explaining what work tokens are in crypto, referencing The Graph as an example.
 

@@ -2,7 +2,7 @@
 title: "Ownership: The Importance of Stake"
 description: "An essay on ownership, stake, and aligned incentives in The Graph — from a 2020 bull-market wake-up call to taking the work of the protocol seriously."
 oldPath: "/hosted-blog-pages/ownership"
-order: 0
+order: 1
 updatedDate: "2024-04-01"
 ---
 It was 2020 and the bitcoin bull market was in full swing. All of my telegram groups were going wild — "WAGMI LFG to the moon!" — and a token I just recently learned about on Coinbase Learn and Earn climbed from 25c to 50c overnight. I was beyond thrilled and locked in what I thought were unbelievable profits. No more than a week later I was shocked to see the price continue to spike upwards. In the coming year GRT would continue to climb to an ATH of over $2.88. I rode the emotional highs and lows until I came to the realization that I really had no idea what was going on. Why were any of these tokens rising and falling? I had won and lost large amounts of money without really knowing anything about what I was participating in.

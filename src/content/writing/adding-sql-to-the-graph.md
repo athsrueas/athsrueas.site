@@ -2,7 +2,7 @@
 title: "Adding SQL to The Graph"
 description: "Notes from Core Dev Call 26: SQL is coming to The Graph via StreamingFast, DBT, ClickHouse, and deployable units."
 oldPath: "/hosted-blog-pages/adding-sql-to-the-graph"
-order: 2
+order: 3
 ---
 Anyone who has been developing on The Graph knows that we use GraphQL for queries. The Guild maintains an excellent GraphQL library and there are many benefits. During Core Dev Call 26 StreamingFast announced that SQL is coming to The Graph via an upgrade to their data processing suite that already includes superstars like the Firehose and Substreams. During the call they gave a demo of what it would look like to run these new features on your own setup which is exciting as it continues our work towards a truly decentralized future. StreamingFast encouraged devs to contact them on their Discord to get help setting up the beta and also to share any specific needs so that they can add features that the community needs.
 

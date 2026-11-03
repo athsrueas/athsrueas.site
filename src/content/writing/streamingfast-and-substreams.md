@@ -2,7 +2,7 @@
 title: "StreamingFast and Substreams"
 description: "An introduction to Substreams and Firehose — how StreamingFast sped up indexing on The Graph without giving up verifiability."
 oldPath: "/hosted-blog-pages/streamingfast-and-substreams"
-order: 3
+order: 4
 ---
 Web3 is an exciting and rapidly-evolving space, and one of the most important pieces of the puzzle is The Graph. This platform allows developers to efficiently access and query data from decentralized applications across various blockchains. One of the latest developments within The Graph ecosystem is Substreams.
 

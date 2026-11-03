@@ -6,9 +6,9 @@ export const site = {
   url: "https://athsrueas.site",
   tagline: "Husband · Father · Teacher · Advocate · Community Builder",
   description:
-    "Personal site of Thomas Freestone — husband, father, teacher, advocate, and community builder. Writing, CV, and work.",
+    "Thomas Freestone builds tools for open knowledge, creative work, and games. Explore projects, working notes, and ways to follow or support the work.",
   intro:
-    "I am an IT Project Manager at Performance Services, working across business intelligence, digital transformation, and enterprise systems. My work combines project delivery with hands-on software development, AI-powered document processing, systems integration, and Linux application deployment.",
+    "I build tools for exploring open knowledge, making music, and creating games. My background is in teaching mathematics; I’m interested in software that helps people ask better questions and make things of their own. This is where I share the projects, the experiments, and what I’m learning along the way.",
   educationLine: "BS Applied Mathematics — Secondary Math",
   identityLine: "Thomas Freestone · BS Applied Math · Purdue at Indianapolis",
 } as const;
@@ -18,9 +18,12 @@ export const nav = [
   { href: "/writing/", label: "Writing" },
   { href: "/projects/", label: "Projects" },
   { href: "/cv/", label: "CV" },
+  { href: "/support/", label: "Follow & support" },
 ] as const;
 
 export const links = {
+  github: "https://github.com/athsrueas",
+  geo: "https://www.geobrowser.io/space/d00460c203779d21d96fcfc6102d7a72",
   linkedin: "https://www.linkedin.com/in/thomasfreestone/",
   linkedinAlt: "https://www.linkedin.com/in/thomas-freestone-172392164/",
   x: "https://x.com/athsrueas",

@@ -2,7 +2,7 @@
 title: "The World of Data Services"
 description: "A concise review of data platforms, and why a competitive decentralized network like The Graph matters for analysts and builders."
 oldPath: "/hosted-blog-pages/the-world-of-data-services"
-order: 1
+order: 2
 ---
 This concise review aims to showcase the value that The Graph offers as a data service platform. I'll explore leading SaaS platforms, established statistics tools, Microsoft options, and R/Python solutions, focusing on their suitability for data analysts or anyone interested in data driven decision making. I hope that many of these services will receive comparable competitors on The Graph protocol.
 

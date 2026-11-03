@@ -4,7 +4,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
 import { links, site } from "../content/site";
 const posts = (await getCollection("writing")).sort((a, b) => a.data.order - b.data.order).slice(0, 3);
-const projects = (await getCollection("software")).sort((a, b) =>
+const projects = (await getCollection("software")).filter(project => project.data.featured).sort((a, b) =>
   Number(b.data.featured) - Number(a.data.featured) || a.data.title.localeCompare(b.data.title)
 ).slice(0, 4);
 const community = [
@@ -15,7 +15,7 @@ const community = [
 const interests = [
   {title: "Currently reading", text: "Books on StoryGraph", href: links.storygraph},
   {title: "Magic shop", text: "My TCGplayer storefront", href: links.tcgplayer},
-  {title: "Support my work", text: "Ko-fi", href: links.kofi},
+  {title: "Follow & support", text: "Project updates, feedback, and optional tips", href: "/support/"},
 ];
 ---
 <BaseLayout description={site.description}>
@@ -29,8 +29,8 @@ const interests = [
         <a class="quiet-link" href="/cv/">CV</a>
         <a class="quiet-link" href="/writing/">Writing</a>
         <a class="quiet-link" href="/projects/">Projects</a>
-        <a class="quiet-link" href={links.linkedin}>LinkedIn</a>
-        <a class="quiet-link" href={links.x}>X</a>
+        <a class="quiet-link" href={links.github}>GitHub</a>
+        <a class="quiet-link" href={links.kofi}>Follow on Ko-fi</a>
       </div>
     </section>
 
@@ -50,7 +50,12 @@ const interests = [
 
     <section class="home-section about-section" aria-labelledby="about-title">
       <div><h2 id="about-title">About</h2></div>
-      <div class="about-copy"><p>My background is in applied mathematics and secondary math education. I taught at Christel House Indy from 2018–2024 and worked as an independent Graph Advocate from 2022–2024.</p><p class="muted-copy">{site.educationLine}. Licensed teacher in Indiana.</p><a class="quiet-link" href="/cv/">Experience & education</a></div>
+      <div class="about-copy"><p>I am an IT Project Manager at Performance Services, working across business intelligence, digital transformation, and enterprise systems. My work combines project delivery with hands-on development and production support.</p><p>Before that, I taught mathematics at Christel House Indy from 2018–2024 and worked as an independent Graph Advocate from 2022–2024. Education, shared knowledge, and community still run through my personal projects.</p><p class="muted-copy">{site.educationLine}. Licensed teacher in Indiana.</p><a class="quiet-link" href="/cv/">Experience & education</a></div>
+    </section>
+
+    <section class="home-section about-section" aria-labelledby="follow-title">
+      <div><h2 id="follow-title">Follow the work</h2></div>
+      <div class="about-copy"><p>If you’re curious about open data, creative tools, or the work behind a game, there’s room to follow along. Try a project, read a working note, or tell me where something could be clearer.</p><p>Ko-fi is a place to follow project updates and leave an optional tip. You can explore the public work without paying.</p><a class="quiet-link" href="/support/">Ways to follow & support</a></div>
     </section>
 
     <section class="home-section personal-links" aria-label="Community and personal links">

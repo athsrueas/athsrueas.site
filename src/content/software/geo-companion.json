@@ -1,7 +1,7 @@
 {
   "title": "Geo Companion",
-  "summary": "A read-only companion to Geo, with graph explorers, education dashboards, and Indianapolis outreach apps.",
-  "description": "Geo Companion is built independently as a React/Vite application. This showcase attaches its GitHub repository and builds a separate preview, while the original application and its live hosting remain independently managed.",
+  "summary": "An independent browser companion to Geo for exploring educational evidence, connected ideas, and an Indianapolis outreach pilot.",
+  "description": "Geo Companion asks what becomes possible when shared knowledge has a useful interface. It reads public Geo content and turns bounded slices of that graph into education dashboards, relationship explorers, and maps. You can follow connections and inspect the sources behind a finding without needing a wallet just to browse.\n\nMy teaching background shapes the question behind the project: does a dashboard help someone ask a better question or make a useful decision? The education views connect programs, studies, and findings, with quantitative plots only where the measurements support comparison. Connections and popularity are not evidence that a claim is true.\n\nThe Indianapolis outreach app is an early directory-and-map pilot. Service schedules and food classifications still need verification; it should not be treated as a complete or current guide to help available today. The application currently reads Geo testnet, so content and availability can change.\n\nOpen the live site to explore, or read the public repository for the architecture, source boundaries, and unfinished work. Geo Companion is independent of the Geo team. Geo contributors, researchers, outreach organizations, and upstream open-source maintainers retain credit for the knowledge and tools it builds on.",
   "status": "active",
   "stack": [
     "React",

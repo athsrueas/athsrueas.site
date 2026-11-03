@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { links } from "../content/site";
+---
+<BaseLayout title="Follow & support" description="Follow Thomas Freestone’s open-data and creative-tool projects, share feedback, or leave an optional tip on Ko-fi.">
+  <main class="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">
+    <p class="eyebrow">An open workbench</p>
+    <h1 class="mt-4 font-display text-4xl sm:text-5xl">Follow & support</h1>
+    <div class="article mt-8">
+      <p>I’m Thomas. I build tools around open knowledge, creative work, and games. Some are useful applications already; others are prototypes or ideas I’m working through. I share the distinction so you can decide what’s worth exploring.</p>
+      <h2>Find something to explore</h2>
+      <ul>
+        <li><a href="/projects/geo-companion/">Geo Companion</a> brings educational research, connected ideas, and an Indianapolis outreach pilot into a browser. It’s an independent reader built alongside Geo.</li>
+        <li><a href="/projects/way-music-lab/">Way Music</a> is a music-studio prototype for playing, recording, shaping sounds, and exploring how music can respond to a game.</li>
+        <li><a href="/projects/folio-studio/">Folio Studio</a> is a local portfolio editor for artists, with a static website export and Cloudflare Pages publishing.</li>
+      </ul>
+      <h2>Follow along</h2>
+      <p><a href={links.kofi}>Follow on Ko-fi</a> for project updates, or explore the source through the links on each <a href="/projects/">project page</a>. My <a href="/writing/">writing</a> has longer notes, and my <a href={links.geo}>Geo space</a> is the home for my personal graph content.</p>
+      <h2>Leave an optional tip</h2>
+      <p>If something here is useful to you, you can <a href={links.kofi}>support my independent work on Ko-fi</a>. Tips support the time I put into research, development, testing, and explaining these projects.</p>
+      <p>You don’t need to pay to explore the public projects or read this site. A tip is voluntary support, with no promised delivery date, commission, or exclusive reward attached. Source code, research, recordings, and other assets have their own licenses; check the relevant repository before reusing them.</p>
+      <h2>Help without spending money</h2>
+      <p>Try a tool and tell me where you got stuck. Open an issue in its public repository, share a useful project with someone who would enjoy it, or show me what you made. Feedback from an actual attempt is especially helpful.</p>
+      <p>You can also find me on <a href={links.x}>X</a> and <a href={links.linkedin}>LinkedIn</a>. Thank you for spending some time with the work.</p>
+    </div>
+  </main>
+</BaseLayout>
