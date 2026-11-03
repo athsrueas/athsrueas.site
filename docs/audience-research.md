@@ -36,6 +36,8 @@ No testimonials, audience/revenue claims, shipping dates, subscription benefits,
 
 ## Ko-fi handoff
 
-The proposed About and introduction are in [kofi-copy.md](kofi-copy.md). During this pass, the existing About was "Working on open data projects". Filling and leaving the About field did not persist. The field's observed change handler submits its form using jQuery; the page logged `ReferenceError: $ is not defined`. One reload reproduced the error and retained the original About. Treat the copy as pending until the saved result can be read back.
+The About and proposed introduction are in [kofi-copy.md](kofi-copy.md). During the initial pass, the existing About was "Working on open data projects". Filling and leaving the About field did not persist. The field's observed change handler submits its form using jQuery; the page logged `ReferenceError: $ is not defined`. One reload reproduced the error and retained the original About.
+
+Follow-up troubleshooting on 2026-11-02 successfully saved the intended About using normal CUA keyboard/text entry, followed by clicking Display name to leave the field. A separate public-page tab displayed the complete new text. The loading-time JavaScript error also occurred during this successful attempt, so attributing the save failure to that error was premature. The operational workaround is verified; the exact earlier cause is not established because input method and verification timing both changed. The introduction post remains unpublished.
 
 The existing goal combined a Way demo title and $1 target with broad creative-work text. It was left unchanged: an achievable milestone and a meaningful amount should come from the owner, not an invented budget. Do not create paid tiers or imply a delivery contract as part of this content pass.

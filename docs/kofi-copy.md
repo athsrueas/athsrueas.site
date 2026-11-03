@@ -1,6 +1,6 @@
 # Ko-fi copy prepared for the audience pass
 
-Prepared 2026-11-02. Pending application: the in-app Settings page did not persist edits and logged a missing jQuery global. These are finished copy proposals, not a record of published changes.
+Prepared 2026-11-02. The About text below was applied and verified on the public profile during follow-up troubleshooting. Normal text entry followed by clicking another field saved successfully. The public introduction remains a finished proposal, not a published post.
 
 ## About you
 
